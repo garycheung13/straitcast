@@ -1,0 +1,28 @@
+{
+  "name": "react-podcast",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev-start": "PORT=3001 NODE_ENV=development nodemon ./bin/www",
+    "heroku-postbuild": "cd client/podcast-player && yarn --production=false && yarn run build"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "firebase-admin": "^5.11.0",
+    "helmet": "^3.12.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "request": "^2.85.0",
+    "sanitize-html": "^1.18.2",
+    "serve-favicon": "~2.4.2",
+    "xml2js": "^0.4.19",
+    "xss-filters": "^1.2.7"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1"
+  }
+}
