@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev-start": "PORT=3001 NODE_ENV=development nodemon ./bin/www",
-    "heroku-postbuild": "cd client/podcast-player && yarn --production=false && yarn run build"
+    "heroku-postbuild": "cd player && yarn --production=false && yarn run build"
   },
   "dependencies": {
     "body-parser": "~1.17.1",

@@ -1,9 +1,3 @@
-[submodule "podcast-player"]
-	path = podcast-player
-	url = /Users/Gary/Documents/side_projects/react-podcast/client/podcast-player
-[submodule "clients"]
-	path = clients
-	url = /Users/Gary/Documents/side_projects/react-podcast/client/podcast-player
 [submodule "player"]
 	path = player
-	url = /Users/Gary/Documents/side_projects/react-podcast/client/podcast-player
+	url = https://github.com/garycheung13/react-podcast-player.git
