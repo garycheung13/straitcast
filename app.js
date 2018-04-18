@@ -22,6 +22,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet());
 app.use('/api', api);
+
+app.use(express.static(path.join(__dirname, 'player/build')));
+app.get('*', function (req, res){
+  res.sendFile(path.join(__dirname+'/player/build/index.html'));
+});
+
 app.use('/', index);
 
 // catch 404 and forward to error handler
