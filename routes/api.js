@@ -43,9 +43,10 @@ function parserPromise(body) {
 }
 
 // firebase init
+// the ternary is a workaround for the way that heroku needs the key formatted in prod
 admin.initializeApp({
     credential: admin.credential.cert({
-        privateKey: JSON.parse(process.env.FIREBASE_PRIVATE_KEY),
+        privateKey: process.env.NODE_ENV === "development" ? process.env.FIREBASE_PRIVATE_KEY: JSON.parse(process.env.FIREBASE_PRIVATE_KEY),
         clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
     }),
     databaseURL: process.env.FIREBASE_DB_LINK
