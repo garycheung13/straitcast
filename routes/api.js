@@ -46,7 +46,7 @@ function parserPromise(body) {
 // the ternary is a workaround for the way that heroku needs the key formatted in prod
 admin.initializeApp({
     credential: admin.credential.cert({
-        privateKey: process.env.NODE_ENV === "development" ? process.env.FIREBASE_PRIVATE_KEY: JSON.parse(process.env.FIREBASE_PRIVATE_KEY),
+        privateKey: process.env.NODE_ENV === "development" ? process.env.FIREBASE_PRIVATE_KEY : JSON.parse(process.env.FIREBASE_PRIVATE_KEY),
         clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
     }),
     databaseURL: process.env.FIREBASE_DB_LINK
@@ -81,7 +81,7 @@ function requestWithCaching(snapshot, pushRef, requestURI, callback) {
         // more than a day, or snapshot returned null
         if (!cachedData || cachedData[pushKey].timestamp + MILLISECONDS_IN_DAY < currentTime) {
             console.log("data not found or out of date, getting fresh data");
-            request(requestURI, function (error, response, body) {
+            request(requestURI, { headers: {"User-Agent": "Mozilla/5.0"}}, function (error, response, body) {
                 if (error) {
                     reject(error);
                 }

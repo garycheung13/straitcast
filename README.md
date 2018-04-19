@@ -18,3 +18,6 @@ Straitcast is a no frills web-based podcast player designed for playing individu
 
 ## Heroku Config Vars
 This project is hosted on a heroku server and uses the platforms config var settings to manage environment variables.
+
+## Future Work
+- [] Clean up server files
